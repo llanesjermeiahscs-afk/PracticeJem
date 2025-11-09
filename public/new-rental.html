@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Create Rental</title>
+  <link rel="stylesheet" href="/feed.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Create Rental</h1>
+    <nav>
+      <a href="/feed.html">Feed</a>
+      <a href="/" class="home-link">Home</a>
+    </nav>
+  </header>
+
+  <main class="feed">
+    <section class="panel auth">
+      <h2>Account (register / login)</h2>
+      <div class="auth-forms">
+        <form id="register-form" class="form">
+          <h3>Register</h3>
+          <input name="email" type="email" placeholder="Email" required>
+          <input name="name" type="text" placeholder="Name">
+          <input name="password" type="password" placeholder="Password (min 8)" required>
+          <button type="submit" class="btn-primary">Register</button>
+        </form>
+
+        <form id="login-form" class="form">
+          <h3>Login</h3>
+          <input name="email" type="email" placeholder="Email" required>
+          <input name="password" type="password" placeholder="Password" required>
+          <button type="submit" class="btn-primary">Login</button>
+        </form>
+      </div>
+      <div id="auth-message" class="muted"></div>
+    </section>
+
+    <section class="panel">
+      <h2>New Rental</h2>
+      <form id="rental-form" class="form">
+        <input name="title" placeholder="Title" required>
+        <input name="location" placeholder="Location">
+        <input name="price" type="number" step="0.01" placeholder="Price">
+        <textarea name="description" placeholder="Description"></textarea>
+        <label>Images (max 6)</label>
+        <input id="images" name="images" type="file" accept="image/*" multiple>
+        <div id="image-preview" class="image-preview"></div>
+        <div id="upload-progress" class="upload-progress" hidden>
+          <div class="bar"><div class="fill" style="width:0%"></div></div>
+          <div id="upload-percent">0%</div>
+        </div>
+        <button type="submit" class="btn-primary">Create Rental</button>
+      </form>
+      <div id="rental-message" class="muted"></div>
+    </section>
+  </main>
+
+  <script src="/new-rental.js"></script>
+</body>
+</html>

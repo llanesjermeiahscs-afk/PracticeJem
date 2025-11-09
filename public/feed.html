@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rentals Feed</title>
+<link rel="stylesheet" href="/feed.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="logo">Rents</div>
+      <div class="search">🔎</div>
+      <nav class="top-actions">
+        <a href="/new-rental.html" class="action">＋</a>
+        <a href="/" class="action">🏠</a>
+        <a href="#" class="avatar-action"><img src="/placeholder.png" alt="me" class="nav-avatar"></a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- stories (owners) strip like Threads/Instagram -->
+  <section class="stories" aria-label="stories">
+    <div class="stories-inner" id="stories-strip">
+      <!-- JS may inject story items here in future; static placeholders for style -->
+      <div class="story"><img src="/placeholder.png" alt="user"><div class="story-name">Alice</div></div>
+      <div class="story"><img src="/placeholder.png" alt="user"><div class="story-name">Bob</div></div>
+      <div class="story"><img src="/placeholder.png" alt="user"><div class="story-name">Carl</div></div>
+      <div class="story"><img src="/placeholder.png" alt="user"><div class="story-name">Dana</div></div>
+    </div>
+  </section>
+
+  <main id="feed" class="feed">
+    <!-- feed cards injected by JS -->
+  </main>
+
+  <template id="card-template">
+    <article class="card">
+      <div class="card-header">
+        <div class="owner-row">
+          <img class="avatar" src="/placeholder.png" alt="owner avatar">
+          <div class="owner-meta">
+            <strong class="owner-name"></strong>
+            <div class="sub muted"><span class="location"></span> · <span class="created-at"></span></div>
+          </div>
+          <button class="more-action">⋯</button>
+        </div>
+      </div>
+      <div class="card-media"><img class="card-image" src="" alt=""></div>
+      <div class="card-body">
+        <h2 class="title"></h2>
+        <p class="price"></p>
+        <p class="description"></p>
+      </div>
+      <div class="card-actions">
+        <div class="left-actions">
+          <button class="like-btn" aria-label="like">❤ <span class="likes">0</span></button>
+          <button class="comment-btn" aria-label="comment">💬 <span class="comments-count">0</span></button>
+          <button class="share-btn" aria-label="share">✈</button>
+        </div>
+        <div class="right-actions">
+          <button class="save-btn" aria-label="save">🔖</button>
+        </div>
+      </div>
+      <div class="comments" hidden>
+        <ul class="comments-list"></ul>
+        <form class="comment-form">
+          <input type="text" name="text" placeholder="Write a comment..." required>
+          <button type="submit">Post</button>
+        </form>
+      </div>
+    </article>
+  </template>
+
+  <script src="/feed.js"></script>
+</body>
+</html>
